@@ -1,24 +1,15 @@
 const express = require('express');
 const route = express.Router();
+const services = require('../services/render')
 
-route.get('/',(req,res)=>{
-    res.render('index.ejs')
-});
+route.get('/',services.homeRoutes);
 
-route.get('/add-user',(req,res)=>{
-    res.render('add_user.ejs')
-});
+route.get('/add-user',services.add_user);
 
-route.get('/update-user',(req,res)=>{
-    res.render('update_user.ejs')
-});
+route.get('/update-user',services.update_user);
 
-route.get('/add-order',(req,res)=>{
-    res.render('add_order.ejs')
-});
+route.get('/add-order',services.add_order);
 
-route.get('/login',(req,res)=>{
-    res.render('login.ejs')
-});
+route.get('/login',services.login);
 
 module.exports = route;
