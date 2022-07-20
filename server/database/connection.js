@@ -1,17 +1,3 @@
-// const mongoose = require('mongoose');
-
-// const dbUrl = 'mongodb+srv://CodeHubSolution:dXy3CUnGneQr7HCg@cluster0.xa5usf0.mongodb.net/myFirstDataBase?retryWrites=true&w=majority'
-
-// const connectionParams = {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// }
-
-// mongoose.connect(dbUrl, connectionParams).then(() => {
-//     console.log('Connected to DB');
-// }).catch((e) => {
-//     console.log('Error', e);
-// })
 
 const mongoose = require('mongoose');
 
@@ -33,3 +19,19 @@ const connectDB = async ()=>{
 
 
 module.exports = connectDB;
+
+
+// const mongoose = require('mongoose');
+
+// const dbUrl = 'mongodb+srv://CodeHubSolution:dXy3CUnGneQr7HCg@cluster0.xa5usf0.mongodb.net/myFirstDataBase?retryWrites=true&w=majority'
+
+// const connectionParams = {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }
+
+// mongoose.connect(dbUrl, connectionParams).then(() => {
+//     console.log('Connected to DB');
+// }).catch((e) => {
+//     console.log('Error', e);
+// })
