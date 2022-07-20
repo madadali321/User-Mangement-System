@@ -39,25 +39,8 @@ app.use('/css',express.static(path.resolve(__dirname,"assets/css")))
 app.use('/img',express.static(path.resolve(__dirname,"assets/img")))
 app.use('/js',express.static(path.resolve(__dirname,"assets/js")))
 
-app.get('/',(req,res)=>{
-    res.render('index.ejs')
-});
-
-app.get('/add-user',(req,res)=>{
-    res.render('add_user.ejs')
-});
-
-app.get('/update-user',(req,res)=>{
-    res.render('update_user.ejs')
-});
-
-app.get('/add-order',(req,res)=>{
-    res.render('add_order.ejs')
-});
-
-app.get('/login',(req,res)=>{
-    res.render('login.ejs')
-});
+//Load Routers
+app.use('/',require('./server/routes/router'));
 
 app.listen(PORT, ()=>{
     console.log(`Server is Running http://localhost:${PORT}`);
