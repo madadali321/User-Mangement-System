@@ -14,13 +14,13 @@ exports.create = (req, res) => {
         name: req.body.name,
         email: req.body.email,
         gender: req.body.gender,
-        status: req.body.status
+        status: req.body.status,
     })
 
     //save user in the database
     user.save(user).then(data => {
-        // res.send(data);
-        res.redirect('/')
+        res.send(data);
+        // res.redirect('/')
     })
         .catch(err => {
             res.send(500).send({
