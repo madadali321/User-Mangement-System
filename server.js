@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path')
+const cors = require("cors")
 
 const connectDB = require('./server/database/connection')
 
@@ -31,6 +32,10 @@ app.use('/img',express.static(path.resolve(__dirname,"assets/img")))
 app.use('/js',express.static(path.resolve(__dirname,"assets/js")))
 
 //Load Routers
+app.use(cors({
+    origin: '*'
+}));
+
 app.use('/',require('./server/routes/router'));
 
 app.listen(PORT, ()=>{

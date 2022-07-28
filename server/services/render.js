@@ -15,7 +15,10 @@ exports.add_user = (req,res)=>{
 }
 
 exports.update_user = (req,res)=>{
-    res.render('update_user.ejs')
+    axios.get("http://localhost:3000/api/users",{params:{id:req.query.id}})
+    .then((response)=>{
+        res.render('update_user.ejs',{selected:response.data});
+    })
 }
 
 exports.add_order = (req,res)=>{
